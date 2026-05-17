@@ -350,7 +350,7 @@ function registerIPC() {
     const run = db.transaction(() => {
       siswaList.forEach(s => {
         const noUrut = String(nomor).padStart(3, '0')
-        const noSkl = \`\${kodeJenjang}/\${noUrut}/\${kode}/\${bulan}/\${thn}\`
+        const noSkl = `${kodeJenjang}/${noUrut}/${kode}/${bulan}/${thn}`
         stmt.run(noSkl, s.id)
         nomor++
       })
